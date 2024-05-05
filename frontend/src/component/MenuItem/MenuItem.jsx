@@ -1,10 +1,13 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { StoreContext } from '../../context/StoreContext'
 import FoodItem from '../FoodItem/FoodItem'
+import axios from 'axios'
 
 function MenuItem({category}) {
 
-  const {food_list} = useContext(StoreContext)
+  const {food_list,URL} = useContext(StoreContext)
+  
+  
 
   return (
     <div>

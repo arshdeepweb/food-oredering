@@ -2,10 +2,16 @@ import React, {useContext, useState} from 'react'
 import {assets} from '../../assets/assets';
 import { StoreContext } from '../../context/StoreContext';
 import {Link} from 'react-router-dom'
+import '../../index.css'
 function Navbar({setShowLogin}) {
 
   const [menu, setMenu] = useState("home")
- const {cartItems, getTotalCartAmount} = useContext(StoreContext)
+ const {cartItems, getTotalCartAmount,token, setToken} = useContext(StoreContext)
+
+  const logOut = async () =>{
+    setToken(false)
+    localStorage.removeItem("token")
+  }
 
   return (
     <div className='flex justify-evenly h-[3rem] items-center my-4'>
@@ -32,7 +38,22 @@ function Navbar({setShowLogin}) {
 
           </div>
         </div>
-        <button className='border-2 border-orange-700 border-solid bg-transparent rounded-2xl py-2 px-5' onClick={()=>setShowLogin(true)} >Sign in</button>
+        {
+          token? 
+          <div className='flex flex-col group relative'>
+            <img src={assets.profile_icon} alt="" className='cursor-pointer' />
+            <ul className='absolute z-50 mt-10 bg-[#fff0ed] border-2 border-solid hover:cursor-pointer border-orange-700 p-4 w-[10rem] rounded-md gap-3 child invisible group-hover:visible flex flex-col transition-all'>
+              <li className='flex gap-1'>
+                <img src={assets.bag_icon} className='w-[25px]' alt="" />
+                <p className='font-semibold hover:text-orange-700'>Orders</p>
+              </li>
+              <li onClick={logOut} className='flex gap-1 hover:cursor-pointer'>
+                <img src={assets.logout_icon} alt="" className='w-[25px]'/>
+                <p className='font-semibold hover:text-orange-700'>Log Out</p>
+              </li>
+            </ul>
+          </div> :<button className='border-2 border-orange-700 border-solid bg-transparent rounded-2xl py-2 px-5' onClick={()=>setShowLogin(true)} >Sign in</button>
+        }
       </div>
     </div>
   )

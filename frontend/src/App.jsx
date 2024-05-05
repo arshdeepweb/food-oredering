@@ -7,6 +7,8 @@ import Home from "./pages/Home/Home";
 import Footer from "./component/Footer/Footer";
 import './App.css'
 import LoginPopup from "./component/LoginPopup/LoginPopup";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -17,6 +19,7 @@ function App() {
     <>
     {showLogin?<LoginPopup setShowLogin={setShowLogin} />:<></>}
       <div className=" max-w-[1280px] m-auto">
+        <ToastContainer />
         <Navbar setShowLogin={setShowLogin} />
         <Routes>
           <Route path="/" element={<Home />} />

@@ -17,4 +17,14 @@
     gap : max(12vw,20px)
 }
 
+/* .child{
+    display: none;
+}
+
+.parent:hover .child{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+} */
+
 }

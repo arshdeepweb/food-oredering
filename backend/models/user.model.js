@@ -14,10 +14,10 @@ const userSchema = new mongoose.Schema({
     type:String,
     required:true
   },
-  cardData:{
+  cartData:{
     type:Object,
     default:{}
   }
 },{minimize:false})
 
-export const User = mongoose.models.user || mongoose.model("User", userSchema)
+export const User = mongoose.models.User || mongoose.model("User", userSchema)

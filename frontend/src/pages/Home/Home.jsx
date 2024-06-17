@@ -3,6 +3,7 @@ import Header from '../../component/Header/Header'
 import ExploreComponent from '../../component/ExploreComponent/ExploreComponent'
 import MenuItem from '../../component/MenuItem/MenuItem'
 import { StoreContext } from '../../context/StoreContext'
+import { toast } from 'react-toastify'
 
 function Home() {
 

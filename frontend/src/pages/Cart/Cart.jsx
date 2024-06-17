@@ -1,11 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import { assets } from "../../assets/assets";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function Cart() {
-  const { cartItems, removeToCart, food_list, getTotalCartAmount } = useContext(StoreContext);
+  const { cartItems, removeToCart, food_list, getTotalCartAmount, URL } = useContext(StoreContext);
   const navigate = useNavigate()
+
+  let itemPrice = getTotalCartAmount()
+
+  console.log(itemPrice);
 
   return (
     <div>
@@ -27,7 +32,7 @@ function Cart() {
                 <div key={index}>
                   <div className="grid grid-cols-6 justify-items-center items-center my-3">
                     <img
-                      src={item.image}
+                      src={`${URL}/images/`+item.image}
                       className="w-[85px] rounded-xl"
                       alt=""
                     />
@@ -56,15 +61,15 @@ function Cart() {
             <div>
               <div className="flex justify-between">
                 <p className="text-lg">SubTotal</p>
-                {getTotalCartAmount() > 0 ? (
-                  <p>${getTotalCartAmount()}</p>
+                {itemPrice > 0 ? (
+                  <p>${itemPrice}</p>
                 ) : (
                   <span>$0</span>
                 )}
               </div>
               <div className="flex justify-between">
                 <p className="text-lg">Delivery</p>
-                {getTotalCartAmount() > 0 ? (
+                {itemPrice > 0 ? (
                   <p>${5}</p>
                 ) : (
                   <span>$0</span>
@@ -72,8 +77,8 @@ function Cart() {
               </div>
               <div className="flex justify-between">
                 <b className="text-lg">Total Amount</b>
-                {getTotalCartAmount() > 0 ? (
-                  <b>${getTotalCartAmount() + 5}</b>
+                {itemPrice > 0 ? (
+                  <b>${itemPrice + 5}</b>
                 ) : (
                   <span>$0</span>
                 )}

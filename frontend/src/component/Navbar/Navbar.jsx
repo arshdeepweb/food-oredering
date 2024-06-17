@@ -16,7 +16,7 @@ function Navbar({setShowLogin}) {
   return (
     <div className='flex justify-evenly h-[3rem] items-center my-4'>
       <div>
-        <Link to='/'><img src={assets.logo} alt="" /></Link>
+        <Link to='/'><h2 className='text-4xl text-orange-700 font-bold'>Delicious Food</h2></Link>
       </div>
       <ul className='hidden md:flex gap-8'>
           <Link to='/'><li className={`${menu==="home"?"text-orange-600":"text-gray-700"} cursor-pointer`} onClick={()=>{setMenu("home")}}>Home</li></Link>

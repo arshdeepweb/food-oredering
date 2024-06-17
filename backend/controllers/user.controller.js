@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken'
 import validator from 'validator'
 
 const loginUser = async (req, res) => {
+  console.log(req.json)
   const {email,password} = req.body
   try {
     const user = await User.findOne({email})

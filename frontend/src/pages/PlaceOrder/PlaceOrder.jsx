@@ -3,11 +3,13 @@ import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
 import { assets } from "../../assets/assets";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 
 function PlaceOrder() {
-  const { getTotalCartAmount, food_list, URL, cartItems, token, payment, setPayment } = useContext(StoreContext);
+  const { getTotalCartAmount, food_list, URL, cartItems, token, payment, setPayment, setCartItems } = useContext(StoreContext);
   const [paymentPopUp, setPaymentPopUp] = useState(false)
+  const navigate = useNavigate()
 
   const [data, setData] = useState({
     firstName:"",
@@ -59,11 +61,13 @@ function PlaceOrder() {
       let response = await axios.post(URL+"/api/order/place", orderData, {headers:{token}})
       console.log(response);
       toast.success(response.data.message)
+      setCartItems({})
+      navigate("/myorders")
       } else {
         toast.error("Payment cancel")
       }
     } catch (error) {
-      
+      console.log(error);
     }
   }, [payment,setPayment])
 
@@ -72,6 +76,11 @@ function PlaceOrder() {
     if(payment != null){
       paymentHandler();
     setPaymentPopUp(false);
+    }
+    if(!token){
+      navigate("/cart")
+    } else if(getTotalCartAmount()<=0){
+      navigate("/cart")
     }
   }, [payment])
   

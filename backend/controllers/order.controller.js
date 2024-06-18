@@ -45,4 +45,14 @@ const userOrder = async (req,res) =>{
   
 }
 
-export {placeOrder, userOrder};
+const listOrders = async (req, res) => {
+  try {
+    const orders = await Order.find({})
+    res.send({success:true,data:orders})
+  } catch (error) {
+    console.log(error); 
+    res.send({success:false,message:"Error"})
+  }
+}
+
+export {placeOrder, userOrder, listOrders};

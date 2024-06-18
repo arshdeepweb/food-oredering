@@ -43,10 +43,10 @@ function Navbar({setShowLogin}) {
           <div className='flex flex-col group relative'>
             <img src={assets.profile_icon} alt="" className='cursor-pointer' />
             <ul className='absolute z-50 mt-10 bg-[#fff0ed] border-2 border-solid hover:cursor-pointer border-orange-700 p-4 w-[10rem] rounded-md gap-3 child invisible group-hover:visible flex flex-col transition-all'>
-              <li className='flex gap-1'>
+              <Link to='/myorders' className='flex gap-1'>
                 <img src={assets.bag_icon} className='w-[25px]' alt="" />
                 <p className='font-semibold hover:text-orange-700'>Orders</p>
-              </li>
+              </Link>
               <li onClick={logOut} className='flex gap-1 hover:cursor-pointer'>
                 <img src={assets.logout_icon} alt="" className='w-[25px]'/>
                 <p className='font-semibold hover:text-orange-700'>Log Out</p>

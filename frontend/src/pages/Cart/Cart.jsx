@@ -5,12 +5,21 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function Cart() {
-  const { cartItems, removeToCart, food_list, getTotalCartAmount, URL } = useContext(StoreContext);
+  const { cartItems, removeToCart, food_list, getTotalCartAmount, URL, token } = useContext(StoreContext);
   const navigate = useNavigate()
 
   let itemPrice = getTotalCartAmount()
 
   console.log(itemPrice);
+
+  // useEffect(() => {
+  //   if(!token){
+  //     navigate("/cart")
+  //   } else if(getTotalCartAmount()<=0){
+  //     navigate("/cart")
+  //   }
+  // }, [token])
+  
 
   return (
     <div>

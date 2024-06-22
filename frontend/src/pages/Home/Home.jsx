@@ -20,7 +20,7 @@ function Home() {
     <div className='mx-4'>
       <Header />
       <ExploreComponent category={category} setCategory={setCategory} />
-      <MenuItem category={category}/>
+      <MenuItem category={category} />
     </div>
   )
 }

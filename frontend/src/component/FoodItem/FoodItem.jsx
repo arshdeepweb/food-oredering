@@ -9,7 +9,7 @@ function FoodItem({id,name,image,price,description}) {
 
   return (
     <div>
-      <div className=' w-[18rem] shadow-2xl my-8 rounded-md '>
+      <div className=' w-[18rem] shadow-2xl shadow-[#252525] my-8 rounded-md '>
         <div className='relative'>
           <img src={`${URL}/images/`+image} alt="" className='rounded-md relative' />
           {

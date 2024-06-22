@@ -13,7 +13,7 @@ function ExploreComponent({category, setCategory}) {
         {menu_list.map((item, index)=>{
           return (
             <div onClick={()=>setCategory(prev => prev === item.menu_name ? "All" : item.menu_name)} key={index} className='flex flex-col gap-2 items-center '>
-              <img src={item.menu_image} className={`w-[7.5vw] min-w-[80px] ${category === item.menu_name ? "border-4 border-solid border-orange-700 rounded-[50%]" : ""} `} alt="" />
+              <img src={item.menu_image} className={`w-[7.5vw] min-w-[80px] ${category === item.menu_name ? "border-4 border-solid border-[#ec3131] rounded-[50%]" : ""} `} alt="" />
               <p className='text-lg '>{item.menu_name}</p>
             </div>
         )

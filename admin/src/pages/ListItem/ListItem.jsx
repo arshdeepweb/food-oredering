@@ -36,7 +36,7 @@ const ListItem = ({url}) => {
 
   return (
     <div>
-       <div className=' w-[90%] sm:w-[80%] m-auto border-2 border-solid border-gray-700 my-10'>
+       <div className=' w-[90%] sm:w-[80%] m-auto border-2 border-solid border-[#ec3131] my-10'>
         <div className="my-6">
           <div className="grid grid-cols-5 gap-4 justify-items-center items-center">
             <p className="text-xl font-bold">Item</p>
@@ -46,7 +46,7 @@ const ListItem = ({url}) => {
             <p className="text-xl font-bold">Remove</p>
           </div>
           <br />
-          <hr className="h-[2px] bg-gray-600 " />
+          <hr className="h-[2px] bg-[#ec3131] " />
           <div className="mb-[5rem]">
             {list.map((item, index) => {
                 return (
@@ -62,7 +62,7 @@ const ListItem = ({url}) => {
                       <p>{item.category}</p>
                       <p onClick={()=>removeItem(item._id)} className='cursor-pointer'>X</p>
                     </div>
-                    <hr className="h-[2px] bg-gray-600 " />
+                    <hr className="h-[2px] bg-[#ec3131] " />
                   </div>
                 );
             })}

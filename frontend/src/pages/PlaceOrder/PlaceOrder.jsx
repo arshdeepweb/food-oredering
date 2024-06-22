@@ -102,15 +102,15 @@ function PlaceOrder() {
     <div>
     {paymentPopUp ? 
   <div className='absolute inset-0 w-screen h-screen bg-black opacity-95 overflow-y-hidden grid z-50'>
-    <div className='p-8 max-w-[330px] sm:max-w-[23vw] border-2 border-solid border-orange-700 rounded-md bg-white place-self-center'>
+    <div className='p-8 max-w-[330px] sm:max-w-[23vw] border-2 border-solid border-[#ec3131] rounded-md bg-white place-self-center'>
       <div className='flex justify-between my-4'>
         <h2 className='font-bold text-xl'>Payment</h2>
         <img src={assets.cross_icon} alt="Close" className='cursor-pointer' onClick={() => setPaymentPopUp(false)} />
       </div>
       <div>
         <p>Do you want to make a payment?</p>
-        <button className='p-2 my-2 cursor-pointer border-2 border-solid border-orange-700 bg-orange-700 text-white w-full text-lg rounded-md' onClick={paymentTrue}>Yes</button>
-        <button className='p-2 my-2 cursor-pointer border-2 border-solid border-orange-700 bg-orange-700 text-white w-full text-lg rounded-md' onClick={paymentFalse}>No</button>
+        <button className='p-2 my-2 cursor-pointer border-2 border-solid border-[#ec3131] bg-[#ec3131] text-white w-full text-lg rounded-md' onClick={paymentTrue}>Yes</button>
+        <button className='p-2 my-2 cursor-pointer border-2 border-solid border-[#ec3131] bg-[#ec3131] text-white w-full text-lg rounded-md' onClick={paymentFalse}>No</button>
       </div>
     </div>
   </div> : null}
@@ -163,7 +163,7 @@ function PlaceOrder() {
               )}
             </div>
           </div>
-          <button type="submit" className="p-2 my-2 cursor-pointer border-2 border-solid border-orange-700 bg-orange-700 text-white w-[100%] text-lg rounded-md">
+          <button type="submit" className="p-2 my-2 cursor-pointer border-2 border-solid border-[#ec3131] bg-[#ec3131] text-white w-[100%] text-lg rounded-md">
             Proceed to Payment
           </button>
         </div>

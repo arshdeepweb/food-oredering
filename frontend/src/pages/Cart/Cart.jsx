@@ -12,13 +12,7 @@ function Cart() {
 
   console.log(itemPrice);
 
-  // useEffect(() => {
-  //   if(!token){
-  //     navigate("/cart")
-  //   } else if(getTotalCartAmount()<=0){
-  //     navigate("/cart")
-  //   }
-  // }, [token])
+
   
 
   return (
@@ -64,7 +58,7 @@ function Cart() {
             }
           })}
         </div>
-        <div className="flex justify-between max-gap mx-4">
+        <div className="flex justify-between max-gap md:flex-row flex-col mx-4">
           <div className="flex-1 flex justify-between gap-[20px] flex-col px-6">
             <h2 className="text-2xl font-bold">Cart Totals</h2>
             <div>
@@ -93,13 +87,13 @@ function Cart() {
                 )}
               </div>
             </div>
-            <button className="p-2 my-2 cursor-pointer border-2 border-solid border-orange-700 bg-orange-700 text-white w-[100%] text-lg rounded-md" onClick={()=>navigate("/placeorder")}>
+            <button className="p-2 my-2 cursor-pointer border-2 border-solid border-[#ec3131] bg-[#ec3131] text-white w-[100%] text-lg rounded-md" onClick={()=>navigate("/placeorder")}>
               Proceed to Checkout
             </button>
           </div>
           <div className="flex flex-col gap-4 ">
             <p>If you have a promo code, Enter it</p>
-            <div className="bg-gray-500">
+            <div className="bg-gray-500 w-[20rem]">
               <input
                 type="text"
                 placeholder="Enter Promo Code"

@@ -69,16 +69,16 @@ const AddItem = ({url}) => {
         </div>
         <div>
           <p className='text-lg font-semibold'>Item Name</p>
-          <input type="text" name='name' placeholder='Type Item Name' onChange={onChangeHandler} value={data.name} className='text-md my-2 border-2 border-solid border-slate-700 py-2 px-4 w-[40%]' />
+          <input type="text" name='name' placeholder='Type Item Name' onChange={onChangeHandler} value={data.name} className='text-md my-2 border-2 border-solid border-[#ec3131] py-2 px-4 w-[40%]' />
         </div>
         <div>
           <p className='text-lg font-semibold'>Item Description</p>
-          <textarea type="text" placeholder='Type Item Description' name='description' onChange={onChangeHandler} value={data.description} rows={5} cols={60} className='text-md my-2 border-2 border-solid border-slate-700 py-2 px-4 w-[40%]' ></textarea>
+          <textarea type="text" placeholder='Type Item Description' name='description' onChange={onChangeHandler} value={data.description} rows={5} cols={60} className='text-md my-2 border-2 border-solid border-[#ec3131] py-2 px-4 w-[40%]' ></textarea>
         </div>
         <div className='flex gap-6'>
           <div>
             <p className='text-lg font-semibold'>Item Category</p>
-            <select name="category" id="" className='text-md border-2 border-solid border-slate-700 my-2 py-2 px-4 min-w-[90px] w-[150px]' onChange={onChangeHandler} value={data.category}>
+            <select name="category" id="" className='text-md border-2 border-solid border-[#ec3131] my-2 py-2 px-4 min-w-[90px] w-[150px]' onChange={onChangeHandler} value={data.category}>
               <option value="Salad">Salad</option>
               <option value="Rolls">Rolls</option>
               <option value="Desert">Desert</option>
@@ -91,11 +91,11 @@ const AddItem = ({url}) => {
           </div>
           <div>
             <p className='text-lg font-semibold'>Item Price</p>
-            <input type="text" name='price' placeholder='$20' onChange={onChangeHandler} value={data.price} className='text-md border-2 border-solid my-2 border-slate-700 py-2 px-4 w-[150px] min-w-[90px] '/>
+            <input type="text" name='price' placeholder='$20' onChange={onChangeHandler} value={data.price} className='text-md border-2 border-solid my-2 border[#ec3131]] py-2 px-4 w-[150px] min-w-[90px] '/>
           </div>
         </div>
         <div>
-          <button className='text-md border-2 border-solid border-black bg-black text-white py-2 px-4 my-2 min-w-[14%]'>Add</button>
+          <button className='text-md border-2 border-solid border-[#ec3131] rounded-md bg-[#ec3131] text-white py-2 px-4 my-2 min-w-[14%]'>Add</button>
         </div>
       </form>
     </div>

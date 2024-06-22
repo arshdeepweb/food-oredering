@@ -5,10 +5,10 @@ function Footer() {
   return (
     <>
       <div>
-        <div className='flex sm:flex-row flex-col gap-8 justify-evenly items-center text-white py-[4rem] bg-slate-700 w-[100%]'>
+        <div className='flex sm:flex-row flex-col gap-8 justify-evenly items-center text-white py-[4rem] bg-[#252525] w-[100%]'>
           <div className='flex flex-col gap-2'>
             <div>
-            <img src={assets.logo} alt="" />
+            <h2 className='text-4xl text-[#ec3131] font-bold'>Delicious Food</h2>
             </div>
             
             <p className=''>Lorem ipsum dolor </p>
@@ -30,7 +30,7 @@ function Footer() {
           <div>
             <h3 className='text-4xl text-white mt-4 font-bold font-sans my-4'>GET IN TOUCH</h3>
             <p>+1-213-465-4359</p>
-            <p>contact@tomato.com</p>
+            <p>contact@deliciousfood.com</p>
           </div>
         </div>
       </div>

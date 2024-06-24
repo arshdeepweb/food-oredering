@@ -12,7 +12,7 @@ const StoreContextProvider = (props) =>{
   const [payment, setPayment] = useState(null)
 
   
-  const URL = "http://localhost:4000"
+  const URL = "https://food-ordering-backend-6vyj.onrender.com"
 
   const fetchFood = async () =>{
     const response = await axios.get(`${URL}/api/food/list`)

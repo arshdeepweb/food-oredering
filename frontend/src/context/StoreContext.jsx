@@ -15,6 +15,7 @@ const StoreContextProvider = (props) =>{
   const URL = "https://food-ordering-backend-6vyj.onrender.com"
 
   const fetchFood = async () =>{
+    console.log("get fetch food...");
     const response = await axios.get(`${URL}/api/food/list`)
     if(response.data.success){
     
@@ -69,18 +70,20 @@ const StoreContextProvider = (props) =>{
     return totalAmount;
 };
 
+async function loadData(){
+      
+  fetchFood()
+  let loginToken = localStorage.getItem("token")
+  console.log(loginToken);
+  if(loginToken){
+    setToken(loginToken)
+    await loadCartData(loginToken)
+  }
+}
+
 
   useEffect(() => {
-    async function loadData(){
-      
-      let loginToken = localStorage.getItem("token")
-      console.log(loginToken);
-      if(loginToken){
-        setToken(loginToken)
-        await loadCartData(loginToken)
-      }
-      fetchFood()
-    }
+    
 
     loadData()
     
